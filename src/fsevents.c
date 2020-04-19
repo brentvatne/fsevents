@@ -5,24 +5,7 @@
 
 #include <assert.h>
 
-#define NAPI_VERSION 4
-#include <node_api.h>
-
-#include "rawfsevents.h"
-#include "constants.h"
-
-#ifndef CHECK
-#ifdef NDEBUG
-#define CHECK(x) do { if (!(x)) abort(); } while (0)
-#else
-#define CHECK assert
-#endif
-#endif
-
-typedef struct {
-  size_t count;
-  fse_event_t *events;
-} fse_js_event;
+break it
 
 void fse_propagate_event(void *callback, size_t numevents, fse_event_t *events) {
   fse_js_event *event = malloc(sizeof(*event));
